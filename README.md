@@ -1,7 +1,11 @@
 To Install all the dependencies run-
+
 npm install
+
 CREATE  a dotenv File
+
 ADD JWT_SECRET key in the dot env file
+
 JWT_SECRET=
 Create database in MYSQL of user and Student details
 
