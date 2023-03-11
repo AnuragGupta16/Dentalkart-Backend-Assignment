@@ -24,7 +24,7 @@ UPLOAD CSV_FILE API-http://localhost:8000/upload_csv_file
 
 DOWNLOAD CSV_FILE API- http://localhost:8000/download_csv_file
 
-Student_details,Upload CSV and Download CSV are Protected Routes.
+**Student_details,Upload CSV and Download CSV are Protected Routes.**
 
 Register API-
 ![New Request - My Workspace 11-03-2023 23_38_40](https://user-images.githubusercontent.com/86673132/224508631-830de213-57f0-4ffb-9ac6-fc23092d19f9.png)
