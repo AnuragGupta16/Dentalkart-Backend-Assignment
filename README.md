@@ -21,8 +21,9 @@ Student_details API-http://localhost:8000/
 
 UPLOAD CSV_FILE API-http://localhost:8000/upload_csv_file
 
-DOWNLOAD CSV_FIEL API- http://localhost:8000/download_csv_file
+DOWNLOAD CSV_FILE API- http://localhost:8000/download_csv_file
 
+![New Request - My Workspace 11-03-2023 23_56_24](https://user-images.githubusercontent.com/86673132/224508584-8d12f722-cb4f-4157-b58e-4c178af054b3.png)
 
 ![MySQL Workbench 12-03-2023 00_29_49](https://user-images.githubusercontent.com/86673132/224507138-3833e85e-8cd4-4e4b-bea4-841f39413883.png)
 
