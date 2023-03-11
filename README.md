@@ -8,6 +8,8 @@ ADD JWT_SECRET key in the dot env file
 
 JWT_SECRET=
 
+START the SERVER by Command node server.js
+
 Create database in MYSQL of user and Student details
 
 ![MySQL Workbench 12-03-2023 00_29_49](https://user-images.githubusercontent.com/86673132/224507138-3833e85e-8cd4-4e4b-bea4-841f39413883.png)
