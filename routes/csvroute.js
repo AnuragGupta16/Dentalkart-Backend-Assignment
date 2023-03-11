@@ -8,23 +8,9 @@ const auth = require("../middlewares/auth");
 const fs = require('fs');
 const path = require('path')
 
-// router.get("/",auth, (req,res)=>{
-    
 
-//     const q = "SELECT * FROM students";
-    
-//     student_db.query(q, (err, data) => {
-//       if (err) {
-//         console.log(err);
-//         return res.json(err);
-//       }
-      
-//       var sql_data=JSON.parse(JSON.stringify(data));
-//     res.send(sql_data);
-//     });
-// });
 
-router.get("download_csv_file",auth, (req,res)=>{
+router.get("/download_csv_file",auth, (req,res)=>{
     const q = "SELECT * FROM students";
     db.query(q, (err, data) => {
       if (err) {
@@ -65,7 +51,7 @@ var storage = multer.diskStorage({
 var upload = multer({
     storage: storage
 });
-router.post("upload_csv_file",auth,upload.single('file'),(req,res)=>{
+router.post("/upload_csv_file",auth,upload.single('file'),(req,res)=>{
 
     console.log(req.file.path);
     uploadCsv(__dirname + '/uploads/' + req.file.filename);
