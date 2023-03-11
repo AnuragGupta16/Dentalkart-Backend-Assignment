@@ -10,7 +10,19 @@ JWT_SECRET=
 
 START the SERVER by Command node server.js
 
+SERVER will run at Port 8000
+
 Create database in MYSQL of user and Student details
+
+Register Api-http://localhost:8000/api/register
+Login API-http://localhost:8000/api/login
+
+Student_details API-http://localhost:8000/
+
+UPLOAD CSV_FILE API-http://localhost:8000/upload_csv_file
+
+DOWNLOAD CSV_FIEL API- http://localhost:8000/download_csv_file
+
 
 ![MySQL Workbench 12-03-2023 00_29_49](https://user-images.githubusercontent.com/86673132/224507138-3833e85e-8cd4-4e4b-bea4-841f39413883.png)
 
