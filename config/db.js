@@ -1,3 +1,4 @@
+//  User database contains the user details 
 const mysql= require("mysql");  
 const db = mysql.createConnection({
     host: "localhost",
@@ -14,6 +15,7 @@ const db = mysql.createConnection({
       console.log(" MYSQl Database Connected");
     }
   })
+// Student database created for storing the student_details
   const student_db = mysql.createConnection({
     host: "localhost",
     user: "root",
