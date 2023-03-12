@@ -1,3 +1,6 @@
+// Contains Routes for Login and Register
+
+
 const router = require("express").Router();
 const bcrypt = require("bcrypt");
 const jwt = require("jsonwebtoken");
@@ -35,7 +38,7 @@ router.post("/register", async (req, res) => {
       .status(400)
       .json({ error: "password must be atleast 6 characters long" });
   try {
-   
+//            To check whether the user email is already registered or not
     const q_searchemail="SELECT * FROM users WHERE email = ?";
     db.query(q_searchemail,[email],async (err,result)=>
     {
@@ -94,7 +97,7 @@ router.post("/login", async (req, res) => {
   try {
   
 
-
+//       Checking wether User is registered or not, if  not registered throw error
     db.query(
         `SELECT * FROM users WHERE email = ${db.escape(email)};`,
         (err, result) => {
