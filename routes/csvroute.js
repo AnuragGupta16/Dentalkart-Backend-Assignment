@@ -4,6 +4,8 @@ const {student_db}=require("../config/db");
 var data_exporter = require('json2csv').Parser;
 const multer = require('multer');
 const csv = require('fast-csv');
+
+// Used the auth middleware for protecting the Student_details,Upload_CSV and Download_CSV route
 const auth = require("../middlewares/auth");
 const fs = require('fs');
 const path = require('path')
@@ -68,7 +70,7 @@ function uploadCsv(uriFile){
         })
         .on("end", function () {
             csvDataColl.shift();
-            
+//             CSV DATA gets stored in CsvDataColl Array
             console.log(csvDataColl.length);
             for(let i=0;i<csvDataColl.length;i++)
             {
@@ -78,10 +80,10 @@ function uploadCsv(uriFile){
                let institute=csvDataColl[i][3];
                let course=csvDataColl[i][4];
                let email=csvDataColl[i][5];
-          
-            let query1 = `INSERT INTO students (name,roll_no,address,institute,course,email) SELECT  "${name}","${roll_no}","${address}","${institute}","${course}","${email}" WHERE NOT EXISTS (SELECT * FROM students WHERE name="${name}" AND roll_no="${roll_no}" AND address="${address}" AND institute="${institute}" AND course="${course}" AND email="${email}")` ;
+//           Query to store unique data in database
+            let query_to_store_unique_data = `INSERT INTO students (name,roll_no,address,institute,course,email) SELECT  "${name}","${roll_no}","${address}","${institute}","${course}","${email}" WHERE NOT EXISTS (SELECT * FROM students WHERE name="${name}" AND roll_no="${roll_no}" AND address="${address}" AND institute="${institute}" AND course="${course}" AND email="${email}")` ;
             
-                    student_db.query(query1, (error, res) => {
+                    student_db.query(query_to_store_unique_data, (error, res) => {
                         console.log(error || res);
                     });  
                 }  
