@@ -81,7 +81,7 @@ function uploadCsv(uriFile){
                let course=csvDataColl[i][4];
                let email=csvDataColl[i][5];
 //           Query to store unique data in database
-            let query_to_store_unique_data = `INSERT INTO students (name,roll_no,address,institute,course,email) SELECT  "${name}","${roll_no}","${address}","${institute}","${course}","${email}" WHERE NOT EXISTS (SELECT * FROM students WHERE name="${name}" AND roll_no="${roll_no}" AND address="${address}" AND institute="${institute}" AND course="${course}" AND email="${email}")` ;
+            let query_to_store_unique_data = `INSERT INTO students (name,roll_no,address,institute,course,email) SELECT  "${name}","${roll_no}","${address}","${institute}","${course}","${email}" WHERE NOT EXISTS (SELECT * FROM students WHERE roll_no="${roll_no}" )` ;
             
                     student_db.query(query_to_store_unique_data, (error, res) => {
                         console.log(error || res);
