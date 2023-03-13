@@ -77,7 +77,7 @@ function uploadCsv(uriFile){
                     });  
                 }  
                     console.log(uriFile);         
-                    //  fs.unlinkSync(uriFile);
+                     fs.unlinkSync(uriFile);
             
             });
             stream.pipe(fileStream);
