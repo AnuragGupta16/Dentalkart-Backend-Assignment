@@ -1,14 +1,5 @@
 
-
-
-
 const {student_db}=require("../config/db");
-
-
-
-
-
-
 
 
 const student_details=(req, res) => {
