@@ -45,7 +45,7 @@ router.get("/download_csv_file",auth, (req,res)=>{
 // Stored the uploaded CSV file in the uploads folder using multer library
 var storage = multer.diskStorage({
     destination: (req, file, callBack) => {
-        callBack(null, './routes/uploads')    
+        callBack(null, './uploads/')    
     },
     filename: (req, file, callBack) => {
         callBack(null, file.fieldname + '-' + Date.now() + path.extname(file.originalname))
@@ -58,7 +58,7 @@ router.post("/upload_csv_file",auth,upload.single('file'),(req,res)=>{
 
     console.log(req.file.path);
 //     Passed the File path where our CSV data gets Stored
-    uploadCsv(__dirname + '/uploads/' + req.file.filename);
+    uploadCsv( './uploads/' + req.file.filename);
     res.send("CSV File Uploaded Successfully");
 });
 function uploadCsv(uriFile){
