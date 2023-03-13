@@ -1,9 +1,6 @@
 const router = require("express").Router();
-const {db}=require("../config/db");
-const {student_db}=require("../config/db");
-var data_exporter = require('json2csv').Parser;
+
 const multer = require('multer');
-const csv = require('fast-csv');
 const auth = require("../middlewares/auth");
 const fs = require('fs');
 const path = require('path');
